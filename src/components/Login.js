@@ -7,14 +7,28 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    "&:hover": {
+      opacity:0.8
+    },
+  },
+}));
 
 export default function Login() {
+  const classes = useStyles();
   useEffect(() => {
     document.body.style.backgroundImage = 'linear-gradient(to right, orange, yellow)';
     return () => {
       document.body.style.backgroundImage = 'none';
     };
   }, []);
+
+  const handleClick = () => {
+    window.location = window.location.origin + "/user"
+  }
 
   return (
     <CssVarsProvider>
@@ -37,7 +51,17 @@ export default function Login() {
           <div>
             <Typography level="h4" component="h1">
               <div style={{ display: "flex" }}>
-                <div style={{ backgroundColor: "orange", padding: "2px", marginRight: 10 }}></div><b>Manage Courses</b>
+                <div 
+                  style={{ 
+                  backgroundColor: "orange",
+                  padding: "2px",
+                  marginRight: 10 
+                  }}
+                >
+                </div>
+                <b>
+                  Manage Courses
+                </b>
               </div>
             </Typography>
             <Typography
@@ -72,13 +96,13 @@ export default function Login() {
             />
           </FormControl>
 
-          <Button sx={{ mt: 1, backgroundColor: "orange" }}>SIGN IN</Button>
+          <Button sx={{ mt: 1, backgroundColor: "orange" }} className={classes.button} onClick={handleClick}>SIGN IN</Button>
           <Typography
             endDecorator={<Link color='warning'>Reset password</Link>}
             fontSize="sm"
             sx={{ alignSelf: 'center' }}
           >
-            Don&apos;t have an account?
+            Forgot your password?
           </Typography>
         </Sheet>
       </main>
