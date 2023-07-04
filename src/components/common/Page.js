@@ -18,6 +18,7 @@ const useStyles = makeStyles({
   },
   pageHeaderTitles: {
     display: "block",
+    marginLeft:250
   },
   pagination: {
     display: "flex",
@@ -31,6 +32,13 @@ const useStyles = makeStyles({
   searchButton: {
     marginLeft: "10px",
   },
+  grid:{
+    marginTop:"60px",
+    marginLeft:"300px",
+    ["@media (max-width: 940px)"]:{
+      marginLeft:"0px",
+    },
+  }
 });
 
 export default function Page(props) {
@@ -43,10 +51,10 @@ export default function Page(props) {
   });
 
   return (
-    <div style={{marginTop:"100px"}}>
+    <div className={classes.grid}>
       <div className={classes.pageHeader}>
         <div className={classes.pageHeaderTitles}>
-          <Typography className={classes.pageTitle}>{props.title}</Typography>
+          <Typography className={classes.pageTitle} style={{fontWeight:"bold"}}>{props.title}</Typography>
           <Typography id="secondTitle" className={classes.pageTitle2}>
             {props.secondTitle}
           </Typography>
