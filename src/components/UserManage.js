@@ -20,6 +20,7 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -45,6 +46,7 @@ function ResponsiveDrawer(props) {
             Admin
         </Typography>
         <List>
+          <Link style={{ textDecoration: 'none', color: 'black' }} to="/home">
             <ListItem disablePadding>
                 <ListItemButton>
                 <ListItemIcon>
@@ -53,6 +55,7 @@ function ResponsiveDrawer(props) {
                 <ListItemText>Home</ListItemText>
                 </ListItemButton>
             </ListItem>
+          </Link>
             <ListItem disablePadding>
                 <ListItemButton>
                 <ListItemIcon>
@@ -61,14 +64,16 @@ function ResponsiveDrawer(props) {
                 <ListItemText>Course</ListItemText>
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-                <ListItemButton>
-                <ListItemIcon>
-                <MailIcon />
-                </ListItemIcon>
-                <ListItemText>Students</ListItemText>
-                </ListItemButton>
-            </ListItem>
+            <Link style={{ textDecoration: 'none', color: 'black' }} to="/students">
+              <ListItem disablePadding>
+                  <ListItemButton>
+                  <ListItemIcon>
+                  <MailIcon />
+                  </ListItemIcon>
+                  <ListItemText>Students</ListItemText>
+                  </ListItemButton>
+              </ListItem>
+            </Link>
             <ListItem disablePadding>
                 <ListItemButton>
                 <ListItemIcon>
@@ -104,6 +109,7 @@ function ResponsiveDrawer(props) {
       <CssBaseline />
       <AppBar
         position="fixed"
+        style={{backgroundColor:"rgb(243,234,225)"}}
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },

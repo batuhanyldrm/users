@@ -27,7 +27,7 @@ export default function Login() {
   }, []);
 
   const handleClick = () => {
-    window.location = window.location.origin + "/user"
+    window.location = window.location.origin + "/home"
   }
 
   return (

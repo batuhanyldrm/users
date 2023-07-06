@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
   pageHeaderTitles: {
     display: "block",
-    marginLeft:250
+    marginLeft:20
   },
   pagination: {
     display: "flex",
@@ -33,8 +33,8 @@ const useStyles = makeStyles({
     marginLeft: "10px",
   },
   grid:{
-    marginTop:"60px",
-    marginLeft:"300px",
+    //marginTop:"80px",
+    marginLeft:"240px",
     ["@media (max-width: 940px)"]:{
       marginLeft:"0px",
     },
