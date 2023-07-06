@@ -5,11 +5,11 @@ const Reducer = (state = {}, action) => {
         case FETCH_USERS:
             return {...action.payload}
         case ADD_USER:
-            return { ...state, ...action.payload };
+            return { ...state, users: [...state.users, action.payload] };
         case DELETE_USER:
-            return state.filter((item) => item.id !== action.payload)
+            return { ...state, users: [...state.users].filter((item) => item.id !== action.payload)};
         case UPDATE_USER:
-            const updateUser = {...state}
+            const updateUser = [...state.users]
             updateUser.map((item, index) => {
                 if (action.payload.id == item.id) {
                     updateUser[index].firstName = action.payload.firstName
@@ -17,10 +17,10 @@ const Reducer = (state = {}, action) => {
                     updateUser[index].email = action.payload.email
                     updateUser[index].phone = action.payload.phone
                     updateUser[index].domain = action.payload.domain
-                    updateUser[index].company.name = action.payload.company.name
+                    updateUser[index].company.name = action.payload.name
                 }
             })
-            return updateUser;
+            return {...state, users: updateUser};
         default:
             return state
     }

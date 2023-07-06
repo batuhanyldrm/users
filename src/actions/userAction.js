@@ -24,7 +24,6 @@ export const addUser = (data) => async (
 export const deleteUser = (id) => async (
     dispatch
 ) => {
-    const resp = await removeUser(id)
         dispatch({
             type: DELETE_USER,
             payload: id

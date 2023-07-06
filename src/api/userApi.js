@@ -16,7 +16,7 @@ export const postUser = async (data) => {
     }, {
         headers: { 'Content-Type': 'application/json' },
     })
-      return resp.status === 201 ? resp : false
+      return resp.status === 200 ? resp : false
 }
 
 export const removeUser = async (id) => {
