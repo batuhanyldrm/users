@@ -6,7 +6,6 @@ import { Divider } from "@mui/material";
 
 const useStyles = makeStyles({
   pageHeader: {
-    marginBottom: "24px",
   },
   pageTitle: {
     marginBottom: "12px",

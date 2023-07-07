@@ -21,6 +21,7 @@ import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -99,6 +100,16 @@ function UserManage(props) {
                 <ListItemText>Settings</ListItemText>
                 </ListItemButton>
             </ListItem>
+            <Link style={{ textDecoration: 'none', color: 'black' }} to="/login">
+              <ListItem disablePadding>
+                  <ListItemButton>
+                  <ListItemIcon>
+                  <LogoutOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText>Logout</ListItemText>
+                  </ListItemButton>
+              </ListItem>
+            </Link>
         </List>
     </div>
   );
