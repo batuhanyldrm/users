@@ -20,11 +20,12 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+function UserManage(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -68,7 +69,7 @@ function ResponsiveDrawer(props) {
               <ListItem disablePadding>
                   <ListItemButton>
                   <ListItemIcon>
-                  <MailIcon />
+                  <SchoolOutlinedIcon />
                   </ListItemIcon>
                   <ListItemText>Students</ListItemText>
                   </ListItemButton>
@@ -172,7 +173,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+UserManage.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -180,4 +181,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default UserManage;

@@ -12,7 +12,7 @@ export const postUser = async (data) => {
         email: data.email,
         phone: data.phone,
         domain: data.domain,
-        name: data.name,
+        company:{name: data.name},
     }, {
         headers: { 'Content-Type': 'application/json' },
     })

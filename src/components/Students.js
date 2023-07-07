@@ -8,10 +8,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import StudentList from './StudentList';
-import { Button, IconButton, Pagination, Stack, TextField } from '@mui/material';
+import { Button, Container, IconButton, Pagination, Stack, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import AddUser from './AddUser';
 import { makeStyles } from '@mui/styles';
+import UserManage from './UserManage';
 
 const useStyles = makeStyles((theme) => ({
   pagination: {
@@ -91,20 +92,24 @@ const Students = (props) => {
 
   return (
     <div>
+    <UserManage/>
+    <Container >
       <AddUser
         open={open}
         handleClose={handleClose}
         users={users}
       />
-      <div style={{ display: "flex", justifyContent: "end" }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
+      <h1 style={{ justifyContent: "start", flex: 1 }}>Students</h1>
+      <div style={{ justifyContent: "end", display: "flex" }}>
         <TextField
           style={{ marginTop: "5px" }}
           id="outlined-basic"
           label="Search"
-          size='small'
+          size="small"
           variant="outlined"
           value={currentSearch}
-          onChange={e => setCurrentSearch(e.target.value)}
+          onChange={(e) => setCurrentSearch(e.target.value)}
           onKeyPress={(e) => checkPressedEnter(e.key)}
           InputProps={{
             endAdornment: (
@@ -116,9 +121,14 @@ const Students = (props) => {
             ),
           }}
         />
-        <Button variant="contained" style={{ margin: "5px", backgroundColor: "orange" }} onClick={() => setOpen(true)}>
+        <Button
+          variant="contained"
+          style={{ margin: "5px", backgroundColor: "orange" }}
+          onClick={() => setOpen(true)}
+        >
           ADD PRODUCT
         </Button>
+      </div>
       </div>
       <Table component={Paper} sx={{ minWidth: 5, marginTop: 2, maxWidth: 1150 }} aria-label="simple table">
         <TableHead>
@@ -142,6 +152,7 @@ const Students = (props) => {
           ))}
         </TableBody>
       </Table>
+      </Container>
 
       <Stack spacing={2}>
         <Pagination

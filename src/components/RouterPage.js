@@ -9,7 +9,6 @@ import Students from "./Students";
 const RouterPage = () => {
   return (
     <BrowserRouter>
-    <UserManage/>
         <Routes>
           <Route>
               <Route path="/" element={<Navigate to="/login" replace />} />

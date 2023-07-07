@@ -33,7 +33,7 @@ const StudentList = (props) => {
           key={user.id}
           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >
-          <TableCell align='left'>
+          <TableCell align='left' style={{display:"flex", alignItems:"center"}}>
             {<img src={user.image} style={{width:50, height:50}}></img> }
             {user.firstName}{" "}{user.lastName}
           </TableCell>

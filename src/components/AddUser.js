@@ -32,7 +32,6 @@ function AddUser(props) {
       await postUser(data
         ).then((res) => {
         addUser(res.data)
-        console.log(res,"qqq")
       }).finally(() => {
         handleClose(false)
       })
