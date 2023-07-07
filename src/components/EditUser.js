@@ -93,7 +93,7 @@ function EditUser(props) {
             margin="normal"
             id="phone"
             label="Phone"
-            type="number"
+            type="text"
             variant="outlined"
             size='small'
           />

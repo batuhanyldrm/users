@@ -35,7 +35,7 @@ const StudentList = (props) => {
         >
           <TableCell align='left'>
             {<img src={user.image} style={{width:50, height:50}}></img> }
-            {user.firstName}{user.lastName}
+            {user.firstName}{" "}{user.lastName}
           </TableCell>
           <TableCell component="th" scope="row" align="left">
           {user.email}
